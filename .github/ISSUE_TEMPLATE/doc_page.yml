@@ -1,0 +1,27 @@
+name: Documentation page
+description: Report a problem on a page, or propose a new page or software entry.
+labels: [documentation, needs-triage]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it about?
+      options:
+        - Error or outdated content on an existing page
+        - Broken example or link
+        - New background page
+        - New software entry
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page URL (if any)
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong or missing, and what should the page say instead?
+    validations:
+      required: true

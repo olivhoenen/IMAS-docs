@@ -1,0 +1,84 @@
+name: docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1" # weekly: picks up new IMAS releases and tutorial changes
+  repository_dispatch:
+    types: [tutorial-updated] # sent by IMAS-tutorial when its notebooks change
+
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write # push to the gh-pages branch
+  pull-requests: write # comment the preview URL on PRs
+
+jobs:
+  build:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-docs.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-docs.txt
+
+      - name: Fetch tutorial notebooks
+        run: scripts/fetch_tutorials.sh
+
+      - name: Restore execution cache
+        uses: actions/cache@v4
+        with:
+          path: _build/.jupyter_cache
+          key: jupyter-cache-${{ github.run_id }}
+          restore-keys: jupyter-cache-
+
+      - name: Build
+        run: sphinx-build -W --keep-going -b html docs _build/html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: html
+          path: _build/html
+
+      - name: Publish site
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _build/html
+          branch: gh-pages
+          clean-exclude: pr-preview/
+          force: false
+
+      - name: Publish PR preview
+        if: >-
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.full_name == github.repository
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: _build/html
+
+  remove-preview:
+    if: >-
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          action: remove

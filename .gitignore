@@ -1,0 +1,8 @@
+_build/
+docs/_build/
+docs/jupyter_execute/
+docs/tutorials/notebooks/
+.jupyter_cache/
+.ipynb_checkpoints/
+__pycache__/
+.venv/

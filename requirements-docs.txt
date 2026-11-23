@@ -1,0 +1,13 @@
+# Site generator
+sphinx>=8
+myst-nb>=1.2
+sphinx-immaterial>=0.13
+sphinx-design>=0.6
+sphinx-copybutton>=0.5
+sphinx-autobuild  # local live preview only
+
+# Packages used by executed examples and tutorial notebooks
+imas-python[netcdf]
+imas-core
+imas-data-dictionary
+imas-idstools

@@ -1,0 +1,71 @@
+name: User story
+description: Tell us what you are trying to do with IMAS, so we can write the page that helps you.
+title: "[User story] "
+labels: [user-story, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your story! It doesn't need to be polished: what matters is who you are,
+        what you are trying to achieve and where you got stuck. Stories collected here decide
+        which pages are written next on the IMAS documentation hub.
+  - type: input
+    id: who
+    attributes:
+      label: Who are you?
+      description: Your role and experience, with IMAS and in your own field.
+      placeholder: e.g. "Diagnostic physicist, new to IMAS, expert in IR camera modelling"
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What do you want to do, and why?
+      description: Use the form "I want to ... so that ...".
+      placeholder: I want to make my synthetic diagnostic read IMAS scenarios, so that I can run it on ITER simulations.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and difficulties
+      description: How do you do it today? What did you try, what did you read, where did you get stuck?
+    validations:
+      required: true
+  - type: checkboxes
+    id: components
+    attributes:
+      label: IMAS components you think are involved
+      options:
+        - label: Data Dictionary / IDSs
+        - label: IMAS-Python
+        - label: C++, Fortran, MATLAB or Java interface
+        - label: IMAS-Core (backends, URIs)
+        - label: IDStools
+        - label: IMAS-Validator
+        - label: SimDB
+        - label: GGD (data on grids)
+        - label: iWrap / workflows
+        - label: I don't know
+  - type: dropdown
+    id: data
+    attributes:
+      label: Kind of data
+      multiple: true
+      options:
+        - Simulation results
+        - Experimental data
+        - Machine description
+        - Synthetic diagnostics
+        - Other / not sure
+  - type: textarea
+    id: success
+    attributes:
+      label: What would a helpful page let you do?
+      description: The outcome you would expect after reading it.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contributing
+      options:
+        - label: I can help write or review the page for this story.

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Bug in an IMAS software component
+    url: https://github.com/iterorganization
+    about: Please report software bugs in the repository of that component (e.g. IMAS-Python, IDStools, IMAS-Core).
+  - name: Question or change to the Data Dictionary
+    url: https://github.com/iterorganization/IMAS-Data-Dictionary/issues
+    about: Missing quantities, units or definitions in IDSs.
