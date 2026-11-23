@@ -1,0 +1,1903 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="03_IMAS_Core.html">
+      
+      
+        <link rel="next" href="04_IDStools.html">
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>IMAS-Python - IMAS documentation hub</title>
+      
+    
+    
+      
+        
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.6efbe22605a23fcd6.min.css?v=b2ceb110" />
+        <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+        <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concept-and-terminology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="IMAS documentation hub" class="md-header__button md-logo" aria-label="IMAS documentation hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IMAS documentation hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IMAS-Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/olivhoenen/IMAS-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IMAS-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../background/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  <span>Background</span>
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-stories/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  <span>User stories</span>
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  <span>Hands-<wbr>on tutorials</span>
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../software/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  <span>IMAS software</span>
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contributing.html" class="md-tabs__link">
+        
+  
+    
+  
+  <span>Contributing</span>
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="IMAS documentation hub" class="md-nav__button md-logo" aria-label="IMAS documentation hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+    </a>
+    IMAS documentation hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/olivhoenen/IMAS-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IMAS-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../background/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Background</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-stories/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>User stories</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    <span>Hands-<wbr>on tutorials</span>
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            <span>Hands-<wbr>on tutorials</span>
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_Start_Here.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Welcome to the IMAS tutorial!</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_Introduction_to_IMAS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Introduction to IMAS</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_IMAS_Data_Dictionary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>IMAS Data Dictionary</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_IMAS_Core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>IMAS Core</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    <span>IMAS-<wbr>Python</span>
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>IMAS-<wbr>Python</span>
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-and-terminology" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Concept and terminology</span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Install</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-dd-version" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Default DD version</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-ids-from-scratch" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Creating IDS from scratch</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating IDS from scratch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idsfactory" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The IDSFactory</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiate-an-ids-object" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Instantiate an IDS object</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-with-inspect" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Explore with inspect</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fill-data-in-ids-object" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Fill data in IDS object</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print-the-content-of-the-ids" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Print the content of the IDS</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-idss" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Storing IDSs</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing IDSs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dbentry" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The DBEntry</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-put-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The put method</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-netcdf-backend" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Using the net<wbr>CDF backend</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-imas-python-command-line-tool-to-print-ids" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Use IMAS-<wbr>Python command line tool to print IDS</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-put-slice-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The put_<wbr>slice method</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The put_slice method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-an-imas-core-backend-e-g-hdf5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Using an IMAS-<wbr>Core backend <wbr>(e.<wbr>g.<wbr> HDF5)</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-idss" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Loading IDSs</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading IDSs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-get-method-and-lazy-access" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The get method and lazy access</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-a-single-time-slice-with-the-get-slice-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Extracting a single time slice with the get_<wbr>slice method</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Additional Resources</span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_IDStools.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>IDStools</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_SimDB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Sim<wbr>DB</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>IMAS software</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>Contributing</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concept-and-terminology" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Concept and terminology</span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Install</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-dd-version" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Default DD version</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-ids-from-scratch" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Creating IDS from scratch</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating IDS from scratch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idsfactory" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The IDSFactory</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiate-an-ids-object" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Instantiate an IDS object</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-with-inspect" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Explore with inspect</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fill-data-in-ids-object" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Fill data in IDS object</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#print-the-content-of-the-ids" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Print the content of the IDS</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-idss" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Storing IDSs</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing IDSs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dbentry" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The DBEntry</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-put-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The put method</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-netcdf-backend" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Using the net<wbr>CDF backend</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-imas-python-command-line-tool-to-print-ids" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Use IMAS-<wbr>Python command line tool to print IDS</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-put-slice-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The put_<wbr>slice method</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The put_slice method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-an-imas-core-backend-e-g-hdf5" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Using an IMAS-<wbr>Core backend <wbr>(e.<wbr>g.<wbr> HDF5)</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-idss" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Loading IDSs</span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading IDSs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-get-method-and-lazy-access" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>The get method and lazy access</span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-a-single-time-slice-with-the-get-slice-method" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Extracting a single time slice with the get_<wbr>slice method</span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span>Additional Resources</span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                
+                
+                  
+
+
+  
+  
+
+<h1 id="imas-python"><span id="IMAS-Python"></span>IMAS-Python<a class="headerlink" href="#imas-python" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/iterorganization/IMAS-Python">IMAS-Python</a> is the recommended Python interface for working with IMAS IDS data. It provides Python objects corresponding to each IDS defined in the <a class="reference internal" href="02_IMAS_Data_Dictionary.html"><span class="std std-doc">Data Dictionary</span></a> and an API to deal with data entries that may rely on the <a class="reference internal" href="03_IMAS_Core.html"><span class="std std-doc">IMAS-Core</span></a> library for I/O operations.</p>
+<h2 id="concept-and-terminology"><span id="Concept-and-terminology"></span>Concept and terminology<a class="headerlink" href="#concept-and-terminology" title="Link to this heading">¶</a></h2>
+<p>IMAS-Python provides the following key ingredients:</p>
+<ul class="simple">
+<li><p>Full support of IMAS-Core, with lazy-loading;</p></li>
+<li><p>Dedicated APIs to interact with IDSs and with IMAS data entries;</p></li>
+<li><p>Ability to use all DD versions (depends on <a class="reference external" href="https://pypi.org/project/imas-data-dictionaries/">imas-data-dictionaries</a>;</p></li>
+<li><p>Easy access to all metadata associated with IDSs, weasy exploration and iteration over the structure;</p></li>
+<li><p>Ability to convert IDS between DD versions and to convert IDS to Xarray;</p></li>
+<li><p>Ability to store and load IDS from netCDF;</p></li>
+<li><p>Comes with a couple of command line tools.</p></li>
+</ul>
+<h2 id="install"><span id="Install"></span>Install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h2>
+<p>IMAS-Python is a pure Python library that can be installed via pip (or <a class="reference external" href="https://anaconda.org/channels/conda-forge/packages/imas-python/overview">conda</a>, thanks to the help from the community!).</p>
+<p>Since IMAS-Core is now also available as a package on all main platforms, it is now installed directly as a dependency of IMAS-Python.
+IMAS-Python also depends on the imas-data-dictionaries package which allows it to know all DD versions, as explained <a class="reference internal" href="02_IMAS_Data_Dictionary.html#alternate-package-with-all-versions"><span class="std std-ref">here</span></a>.</p>
+<p>Note that other dependencies are optional and may be installed on-demand:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">netcdf</span></code> enables saving IDS into netCDF <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/netcdf/conventions.html#imas-conventions-for-the-netcdf-data-format">self-described format</a> (does not use IMAS-Core);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> enables conversion of IDS into Xarray;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h5py</span></code> enables the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/cli.html#imas-analyze-db"><code class="docutils literal notranslate"><span class="pre">analyze-db</span></code></a> command line tool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">saxonche</span></code> enables on-the-fly creation of models for the selected DD version when working with mdsplus backend (requires install of <a class="reference internal" href="03_IMAS_Core.html#test-with-mdsplus-backend"><span class="std std-ref">IMAS-Core from sources</span></a>);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test</span></code> installs all dependencies required to run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># install the latest release of the package with pip with optional netcdf </span>
+<span class="o">%</span><span class="k">pip</span> install imas-python[netcdf]
+
+<span class="c1"># let's verify that we can use the command line tool </span>
+<span class="o">!</span>imas<span class="w"> </span>--help
+
+<span class="c1"># and check which versions we got</span>
+<span class="o">!</span>imas<span class="w"> </span>version
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>Requirement already satisfied: imas-python[netcdf] in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.3.1)
+Requirement already satisfied: numpy&gt;=1.15.4 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (2.5.5)
+Requirement already satisfied: rich in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (15.0.0)
+Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (1.18.1)
+Requirement already satisfied: click in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (8.5.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (26.3)
+Requirement already satisfied: xxhash&gt;=2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (4.1.0)
+Requirement already satisfied: imas_data_dictionaries in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (4.1.1)
+Requirement already satisfied: imas_core in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (5.7.3)
+Requirement already satisfied: netCDF4&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from imas-python[netcdf]) (1.7.5.1.post1)
+Requirement already satisfied: cftime in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from netCDF4&gt;=1.4.1-&gt;imas-python[netcdf]) (1.6.6.1)
+Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from netCDF4&gt;=1.4.1-&gt;imas-python[netcdf]) (2026.11.20)
+Requirement already satisfied: markdown-it-py&gt;=2.2.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from rich-&gt;imas-python[netcdf]) (4.3.0)
+Requirement already satisfied: pygments&lt;3.0.0,&gt;=2.13.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from rich-&gt;imas-python[netcdf]) (2.21.0)
+Requirement already satisfied: mdurl~=0.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from markdown-it-py&gt;=2.2.0-&gt;rich-&gt;imas-python[netcdf]) (0.1.2)
+Note: you may need to restart the kernel to use updated packages.
+Usage: imas [OPTIONS] [COMMAND] [ARGS]...
+
+  IMAS-Python command line interface.
+
+  Please use one of the available commands listed below. You can get help for
+  each command by executing:
+
+      imas &lt;command&gt; --help
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  analyze-db           Analyze one or more Data Entries stored in the...
+  convert              Convert a Data Entry (or a single IDS) to the...
+  print                Pretty print the contents of an IDS.
+  process-db-analysis  Process supplied Data Entry analyses, and display...
+  validate_nc          Validate if the provided netCDF file adheres to...
+  version              Print version information of IMAS-Python.
+14:30:40 INFO     Parsing data dictionary version 4.1.1 @dd_zip.py:89
+<span class=" -Color -Color-Bold">                            IMAS-Python version info                            </span>
+ ────────────────────────────────────────────────────────────────────────────── 
+  IMAS-Python version:                  2.3.1                                   
+ ────────────────────────────────────────────────────────────────────────────── 
+  Default data dictionary version:      4.1.1                                   
+  Available data dictionary versions:   3.22.0, 3.23.0, 3.23.1, 3.23.2,         
+                                        3.23.3, 3.24.0, 3.25.0, 3.26.0,         
+                                        3.27.0, 3.28.0, 3.28.1, 3.29.0,         
+                                        3.30.0, 3.31.0, 3.32.0, 3.32.1,         
+                                        3.33.0, 3.34.0, 3.35.0, 3.36.0,         
+                                        3.37.0, 3.37.1, 3.37.2, 3.38.0,         
+                                        3.38.1, 3.39.0, 3.40.0, 3.40.1,         
+                                        3.41.0, 3.42.0, 3.42.1, 3.42.2, 4.0.0,  
+                                        4.1.0, 4.1.1                            
+ ────────────────────────────────────────────────────────────────────────────── 
+  Access Layer core version:            5.7.3                                   
+ ──────────────────────────────────────────────────────────────────────────────
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="default-dd-version"><span id="Default-DD-version"></span>Default DD version<a class="headerlink" href="#default-dd-version" title="Link to this heading">¶</a></h3>
+<p>By default IMAS-Python will use the latest release of the Data Dictionary as it’s default target version when creating new IDSs, when opening/creating a data-entry, when reading IDS data with <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/multi-dd.html"><code class="docutils literal notranslate"><span class="pre">autoconvert=True</span></code></a>.</p>
+<p>Note that while the API allows you to select which version you target for each operation (and by consequence not use the default one) you also have the option to overwrite this default by setting the <code class="docutils literal notranslate"><span class="pre">IMAS_VERSION</span></code> environement variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># verifying that IMAS-Python picks up $IMAS_VERSION as default DD version</span>
+<span class="o">!</span><span class="nv">IMAS_VERSION</span><span class="o">=</span><span class="m">3</span>.42.0<span class="w"> </span>imas<span class="w"> </span>version<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Default
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>14:30:41 INFO     Parsing data dictionary version 3.42.0 @dd_zip.py:89
+  Default data dictionary version:      3.42.0
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="creating-ids-from-scratch"><span id="Creating-IDS-from-scratch"></span>Creating IDS from scratch<a class="headerlink" href="#creating-ids-from-scratch" title="Link to this heading">¶</a></h2>
+<p>Now let’s start using the IMAS-Python to structure some data into an IDS form.</p>
+<h3 id="the-idsfactory"><span id="The-IDSFactory"></span>The <code class="docutils literal notranslate"><span class="pre">IDSFactory</span></code><a class="headerlink" href="#the-idsfactory" title="Link to this heading">¶</a></h3>
+<p>When creating new IDS objects we start from the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.ids_factory.IDSFactory.html#imas.ids_factory.IDSFactory"><code class="docutils literal notranslate"><span class="pre">IDSFactory</span></code> API</a>, which allows to decide which version of the DD we want to use, and will expose the corresponding list of IDS and their internal structures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># first we import the imas package </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">imas</span>
+
+<span class="c1"># then we create an IDSFactory for our chosen version of the DD </span>
+<span class="n">ids3</span> <span class="o">=</span> <span class="n">imas</span><span class="o">.</span><span class="n">IDSFactory</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">"3.42.0"</span><span class="p">)</span>
+<span class="c1"># or for the latest (the default)</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="n">imas</span><span class="o">.</span><span class="n">IDSFactory</span><span class="p">()</span>
+
+<span class="c1"># we can verify which DD version is associated with this factory</span>
+<span class="c1"># and what is the list of IDS available in this version</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">The Factory is in DD version </span><span class="si">{</span><span class="n">ids</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The following IDSs are defined: </span><span class="si">{</span><span class="n">ids</span><span class="o">.</span><span class="n">ids_names</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"new IDS: </span><span class="si">{</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ids3</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"removed IDS: </span><span class="si">{</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ids3</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">ids</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>The Factory is in DD version 4.1.1
+The following IDSs are defined: ['amns_data', 'balance_of_plant', 'barometry', 'b_field_non_axisymmetric', 'bolometer', 'breeding_blanket', 'bremsstrahlung_visible', 'calorimetry', 'camera_ir', 'camera_visible', 'camera_x_rays', 'charge_exchange', 'coils_non_axisymmetric', 'controllers', 'core_instant_changes', 'core_profiles', 'core_sources', 'core_transport', 'cryostat', 'dataset_fair', 'disruption', 'distribution_sources', 'distributions', 'divertors', 'ec_launchers', 'ece', 'edge_profiles', 'edge_sources', 'edge_transport', 'em_coupling', 'equilibrium', 'ferritic', 'focs', 'gas_injection', 'gas_pumping', 'gyrokinetics_local', 'hard_x_rays', 'ic_antennas', 'interferometer', 'iron_core', 'langmuir_probes', 'lh_antennas', 'magnetics', 'operational_instrumentation', 'mhd', 'mhd_linear', 'mse', 'nbi', 'neutron_diagnostic', 'ntms', 'pellets', 'pf_active', 'pf_passive', 'pf_plasma', 'plasma_initiation', 'plasma_profiles', 'plasma_sources', 'plasma_transport', 'polarimeter', 'pulse_schedule', 'radiation', 'real_time_data', 'reflectometer_profile', 'reflectometer_fluctuation', 'refractometer', 'runaway_electrons', 'sawteeth', 'soft_x_rays', 'spectrometer_mass', 'spectrometer_uv', 'spectrometer_visible', 'spectrometer_x_ray_crystal', 'spi', 'summary', 'temporary', 'thomson_scattering', 'tf', 'transport_solver_numerics', 'turbulence', 'wall', 'waves', 'workflow']
+new IDS: ['balance_of_plant', 'breeding_blanket']
+removed IDS: ['dataset_description']
+</code></pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>14:30:43 INFO     Parsing data dictionary version 3.42.0 @dd_zip.py:89
+14:30:43 INFO     Parsing data dictionary version 4.1.1 @dd_zip.py:89
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="instantiate-an-ids-object"><span id="Instantiate-an-IDS-object"></span>Instantiate an IDS object<a class="headerlink" href="#instantiate-an-ids-object" title="Link to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># we can now instantiate an IDS object</span>
+<span class="n">cp</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">core_profiles</span><span class="p">()</span>
+<span class="c1"># or from a string</span>
+<span class="n">cp</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"core_profiles"</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>imas.ids_toplevel.IDSToplevel
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="explore-with-inspect"><span id="Explore-with-inspect"></span>Explore with <code class="docutils literal notranslate"><span class="pre">inspect</span></code><a class="headerlink" href="#explore-with-inspect" title="Link to this heading">¶</a></h3>
+<p>We will also use some utility functions from <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.util.html#module-imas.util"><code class="docutils literal notranslate"><span class="pre">imas.util</span></code></a> to simplify our life when exploring the various objects: first the <code class="docutils literal notranslate"><span class="pre">inspect</span></code> function and later the <code class="docutils literal notranslate"><span class="pre">print_tree</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">imas.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">inspect</span><span class="p">,</span> <span class="n">print_tree</span>
+
+<span class="c1"># let's use the imas.util.inspect function to explore </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Top level structure of the core_profiles IDS"</span><span class="p">)</span>
+<span class="n">inspect</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+
+<span class="c1"># we can get more details from metadata associated with each object</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">All the metadata associated with a field are available."</span><span class="p">)</span>
+<span class="n">inspect</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">global_quantities</span><span class="o">.</span><span class="n">t_e_volume_average</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Sub-structures (nodes of the IDS) also contain useful metadata."</span><span class="p">)</span>
+<span class="n">inspect</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>Top level structure of the core_profiles IDS
+
+All the metadata associated with a field are available.
+
+Sub-structures (nodes of the IDS) also contain useful metadata.
+</code></pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #000080; text-decoration-color: #000080">╭────────────────────────── IDS: </span><span style="color: #008000; text-decoration-color: #008000">core_profiles </span><span style="color: #000080; text-decoration-color: #000080">(DD version </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.1.1</span><span style="color: #000080; text-decoration-color: #000080">) ───────────────────────────╮</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">Core plasma profiles</span>                                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> ╭────────────────────────────────────── Attributes ──────────────────────────────────────╮ <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> │ <span style="color: #808000; text-decoration-color: #808000; font-style: italic">has_value</span> = <span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span>                                                                      │ <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> │  <span style="color: #808000; text-decoration-color: #808000; font-style: italic">metadata</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSMetadata</span><span style="color: #000000; text-decoration-color: #000000"> for </span><span style="color: #008000; text-decoration-color: #008000">'core_profiles'</span><span style="font-weight: bold">&gt;</span>                                          │ <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> ╰────────────────────────────────────────────────────────────────────────────────────────╯ <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">╭───────────────────────────────────── Child nodes ──────────────────────────────────────╮</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│                  </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">code</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructure</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, code</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">                       │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│            </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">covariance</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructure</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, covariance</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">                 │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│     </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">global_quantities</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructure</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, global_quantities</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">          │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│        </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">ids_properties</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructure</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, ids_properties</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">             │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│           </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">profiles_1d</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructArray</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, profiles_1d with </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span><span style="color: #000000; text-decoration-color: #000000"> items</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080"> │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│           </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">profiles_2d</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructArray</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, profiles_2d with </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span><span style="color: #000000; text-decoration-color: #000000"> items</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080"> │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│            </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">statistics</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructArray</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, statistics with </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span><span style="color: #000000; text-decoration-color: #000000"> items</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">  │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│                  </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">time</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSNumericArray</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, time, empty FLT_1D</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">      │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">│ </span><span style="color: #808000; text-decoration-color: #808000; font-style: italic">vacuum_toroidal_field</span><span style="color: #008080; text-decoration-color: #008080"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSStructure</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">(</span><span style="color: #000000; text-decoration-color: #000000">IDS:core_profiles, vacuum_toroidal_field</span><span style="color: #000000; text-decoration-color: #000000; font-weight: bold">)</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">&gt;</span><span style="color: #008080; text-decoration-color: #008080">      │</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">╰────────────────────────────────────────────────────────────────────────────────────────╯</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">╰────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #000080; text-decoration-color: #000080">╭──────────────────────────────────── </span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">class</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'imas.ids_metadata.IDSMetadata'</span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&gt;</span><span style="color: #000080; text-decoration-color: #000080"> ────────────────────────────────────╮</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">Container for IDS Metadata stored in the Data Dictionary.</span>                                                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╭─────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSMetadata</span><span style="color: #000000; text-decoration-color: #000000"> for </span><span style="color: #008000; text-decoration-color: #008000">'t_e_volume_average'</span><span style="font-weight: bold">&gt;</span>                                                                      <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>  <span style="color: #808000; text-decoration-color: #808000; font-style: italic">alternative_coordinates</span> = <span style="font-weight: bold">()</span>                                                                                   <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>              <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinate1</span> = <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'time'</span><span style="font-weight: bold">)</span>                                                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>              <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinates</span> = <span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'time'</span><span style="font-weight: bold">)</span>,<span style="font-weight: bold">)</span>                                                             <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>      <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinates_same_as</span> = <span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">''</span><span style="font-weight: bold">)</span>,<span style="font-weight: bold">)</span>                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                <span style="color: #808000; text-decoration-color: #808000; font-style: italic">data_type</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSDataType.FLT:</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'FLT'</span><span style="font-weight: bold">&gt;</span>                                                             <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>            <span style="color: #808000; text-decoration-color: #808000; font-style: italic">documentation</span> = <span style="color: #008000; text-decoration-color: #008000">'Volume averaged electron temperature (average over the plasma volume up to the </span>     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                            <span style="color: #008000; text-decoration-color: #008000">LCFS)'</span>                                                                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>          <span style="color: #808000; text-decoration-color: #808000; font-style: italic">identifier_enum</span> = <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #808000; text-decoration-color: #808000; font-style: italic">introduced_after_version</span> = <span style="color: #008000; text-decoration-color: #008000">'3.33.0'</span>                                                                             <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                 <span style="color: #808000; text-decoration-color: #808000; font-style: italic">maxoccur</span> = <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">name</span> = <span style="color: #008000; text-decoration-color: #008000">'t_e_volume_average'</span>                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">ndim</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                                                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path</span> = <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSPath</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'global_quantities/t_e_volume_average'</span><span style="font-weight: bold">)</span>                                      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                 <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path_doc</span> = <span style="color: #008000; text-decoration-color: #008000">'global_quantities/t_e_volume_average(:)'</span>                                            <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>              <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path_string</span> = <span style="color: #008000; text-decoration-color: #008000">'global_quantities/t_e_volume_average'</span>                                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>             <span style="color: #808000; text-decoration-color: #808000; font-style: italic">timebasepath</span> = <span style="color: #008000; text-decoration-color: #008000">'time'</span>                                                                               <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">type</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSType.DYNAMIC:</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'dynamic'</span><span style="font-weight: bold">&gt;</span>                                                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">units</span> = <span style="color: #008000; text-decoration-color: #008000">'eV'</span>                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #000080; text-decoration-color: #000080">╭──────────────────── </span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">class</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'imas.ids_metadata.IDSMetadata'</span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&gt;</span><span style="color: #000080; text-decoration-color: #000080"> ────────────────────╮</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">Container for IDS Metadata stored in the Data Dictionary.</span>                       <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╭─────────────────────────────────────────────────────────────────────────────╮</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSMetadata</span><span style="color: #000000; text-decoration-color: #000000"> for </span><span style="color: #008000; text-decoration-color: #008000">'profiles_1d'</span><span style="font-weight: bold">&gt;</span>                                             <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╰─────────────────────────────────────────────────────────────────────────────╯</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                                 <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #808000; text-decoration-color: #808000; font-style: italic">alternative_coordinates</span> = <span style="font-weight: bold">()</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>             <span style="color: #808000; text-decoration-color: #808000; font-style: italic">cocos_alias</span> = <span style="color: #008000; text-decoration-color: #008000">'IDSPATH'</span>                                             <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>           <span style="color: #808000; text-decoration-color: #808000; font-style: italic">cocos_replace</span> = <span style="color: #008000; text-decoration-color: #008000">'core_profiles.profiles_1d{i}'</span>                        <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>             <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinate1</span> = <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'profiles_1d(itime)/time'</span><span style="font-weight: bold">)</span>              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>             <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinates</span> = <span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'profiles_1d(itime)/time'</span><span style="font-weight: bold">)</span>,<span style="font-weight: bold">)</span>           <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">coordinates_same_as</span> = <span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSCoordinate</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">''</span><span style="font-weight: bold">)</span>,<span style="font-weight: bold">)</span>                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>               <span style="color: #808000; text-decoration-color: #808000; font-style: italic">data_type</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSDataType.STRUCT_ARRAY:</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'struct_array'</span><span style="font-weight: bold">&gt;</span>            <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>           <span style="color: #808000; text-decoration-color: #808000; font-style: italic">documentation</span> = <span style="color: #008000; text-decoration-color: #008000">'Core plasma radial profiles for various time slices'</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>         <span style="color: #808000; text-decoration-color: #808000; font-style: italic">identifier_enum</span> = <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>                                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                <span style="color: #808000; text-decoration-color: #808000; font-style: italic">maxoccur</span> = <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>                                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">name</span> = <span style="color: #008000; text-decoration-color: #008000">'profiles_1d'</span>                                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">ndim</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>                                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path</span> = <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">IDSPath</span><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'profiles_1d'</span><span style="font-weight: bold">)</span>                                <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path_doc</span> = <span style="color: #008000; text-decoration-color: #008000">'profiles_1d(itime)'</span>                                  <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>             <span style="color: #808000; text-decoration-color: #808000; font-style: italic">path_string</span> = <span style="color: #008000; text-decoration-color: #008000">'profiles_1d'</span>                                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>     <span style="color: #808000; text-decoration-color: #808000; font-style: italic">structure_reference</span> = <span style="color: #008000; text-decoration-color: #008000">'core_profiles_profiles_1d'</span>                           <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>            <span style="color: #808000; text-decoration-color: #808000; font-style: italic">timebasepath</span> = <span style="color: #008000; text-decoration-color: #008000">'profiles_1d/time'</span>                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">type</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">IDSType.DYNAMIC:</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'dynamic'</span><span style="font-weight: bold">&gt;</span>                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                   <span style="color: #808000; text-decoration-color: #808000; font-style: italic">units</span> = <span style="color: #008000; text-decoration-color: #008000">''</span>                                                    <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">╰─────────────────────────────────────────────────────────────────────────────────╯</span>
+</pre>
+</div></div>
+</div>
+<h3 id="fill-data-in-ids-object"><span id="Fill-data-in-IDS-object"></span>Fill data in IDS object<a class="headerlink" href="#fill-data-in-ids-object" title="Link to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># we found from the metadata that profiles_1d is a dynamic (i.e. time-dependent) array of structure (STRUCT_ARRAY)</span>
+<span class="c1"># let's fill some mock profiles data in this structure for a single "time slice" </span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">electrons</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+<span class="c1"># you can also use a dict-like accessor</span>
+<span class="n">cp</span><span class="p">[</span><span class="sa">f</span><span class="s2">"profiles_1d[0]/electrons/density"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">5e19</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+<span class="c1"># let's not forget to store the associated coordinate for these quantities</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">rho_tor_norm</span> <span class="o">=</span> <span class="n">rho</span>
+
+<span class="c1"># we can store time homogeneously when all time-dependent values are sharing the same timebase</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"We must set homogeneous_time, here is the description of this node:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">ids_properties</span><span class="o">.</span><span class="n">homogeneous_time</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">documentation</span><span class="p">)</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">ids_properties</span><span class="o">.</span><span class="n">homogeneous_time</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="n">cp</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>We must set homogeneous_time, here is the description of this node:
+
+This node must be filled (with 0, 1, or 2) for the IDS to be valid. If 1, the time of this IDS is homogeneous, i.e. the time values for this IDS are stored in the time node just below the root of this IDS. If 0, the time values are stored in the various time fields at lower levels in the tree. In the case only constant or static nodes are filled within the IDS, homogeneous_time must be set to 2
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="print-the-content-of-the-ids"><span id="Print-the-content-of-the-IDS"></span>Print the content of the IDS<a class="headerlink" href="#print-the-content-of-the-ids" title="Link to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># let's summarize what we stored so far in this core_profiles IDS using another function from imas.util</span>
+<span class="n">print_tree</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+<span class="c1"># note that ids_properties/version_put is filled in automatically for provenance purpose</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080">core_profiles</span>
+├── <span style="color: #800080; text-decoration-color: #800080">ids_properties</span>
+│   └── <span style="color: #808000; text-decoration-color: #808000">homogeneous_time</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+├── <span style="color: #800080; text-decoration-color: #800080">profiles_1d[0]</span>
+│   ├── <span style="color: #800080; text-decoration-color: #800080">profiles_1d[0]/grid</span>
+│   │   └── <span style="color: #808000; text-decoration-color: #808000">rho_tor_norm</span>: <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>.    , <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0204</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0408</span>, <span style="color: #808000; text-decoration-color: #808000">...</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9592</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9796</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.    <span style="font-weight: bold">]</span>, <span style="color: #808000; text-decoration-color: #808000">shape</span>=<span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span>,<span style="font-weight: bold">))</span>
+│   └── <span style="color: #800080; text-decoration-color: #800080">profiles_1d[0]/electrons</span>
+│       ├── <span style="color: #808000; text-decoration-color: #808000">temperature</span>:                                                                                     
+│       │   <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10000</span>.    ,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9995.8351</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9983.3403</span>, <span style="color: #808000; text-decoration-color: #808000">...</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">799.6668</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">403.9983</span>,     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>.    <span style="font-weight: bold">]</span>, <span style="color: #808000; text-decoration-color: #808000">shape</span>=<span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span>,<span style="font-weight: bold">))</span>
+│       └── <span style="color: #808000; text-decoration-color: #808000">density</span>:                                                                                         
+│           <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.0000e+19</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.9983e+19</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.9933e+19</span>, <span style="color: #808000; text-decoration-color: #808000">...</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.3199e+19</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.1616e+19</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0000e+19</span><span style="font-weight: bold">]</span>, <span style="color: #808000; text-decoration-color: #808000">shape</span>=<span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span>,<span style="font-weight: bold">))</span>
+└── <span style="color: #808000; text-decoration-color: #808000">time</span>: <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>.<span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<h2 id="storing-idss"><span id="Storing-IDSs"></span>Storing IDSs<a class="headerlink" href="#storing-idss" title="Link to this heading">¶</a></h2>
+<p>So far we created an IDS object in our memory space, to make it persistent we want now to store it on disk in a data entry that can contain several related IDSs that describes my simulation or experiment.</p>
+<h3 id="the-dbentry"><span id="The-DBEntry"></span>The <code class="docutils literal notranslate"><span class="pre">DBEntry</span></code><a class="headerlink" href="#the-dbentry" title="Link to this heading">¶</a></h3>
+<p>Creating a new <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html"><code class="docutils literal notranslate"><span class="pre">DBEntry</span></code></a> requires two mandatory arguments:</p>
+<ul class="simple">
+<li><p>a <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.__init__.uri"><code class="docutils literal notranslate"><span class="pre">uri</span></code></a> to specify information about the resource associated with the data entry (here we are going to test both a netCDF file and the HDF5 backend of IMAS-Core);</p></li>
+</ul>
+<div class="alert alert-block alert-info">
+<b>Info:</b> Note that the netCDF format works slightly differently compared to IMAS-Core's data entries (associated to a folder), in netCDF's case all data are always stored in a single .nc file, so the API only contains the path to this file.</div>
+<ul class="simple">
+<li><p>a <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.__init__.mode"><code class="docutils literal notranslate"><span class="pre">mode</span></code></a> to decide how to open this data entry (<code class="docutils literal notranslate"><span class="pre">w</span></code> will create the file, overwriting it in case it exists already).</p></li>
+</ul>
+<h3 id="the-put-method"><span id="The-put-method"></span>The <code class="docutils literal notranslate"><span class="pre">put</span></code> method<a class="headerlink" href="#the-put-method" title="Link to this heading">¶</a></h3>
+<p>To store and an IDS into this DBEntry object, we call its <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.put"><code class="docutils literal notranslate"><span class="pre">put</span></code> method</a>. Be aware that this method method always clears existing data for this IDS if present in the data entry (with the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.delete_data"><code class="docutils literal notranslate"><span class="pre">delete_data</span></code> method</a>). In addition, it also checks that the coordinates associated with its nD array quantities are consistent (with the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.ids_toplevel.IDSToplevel.html#imas.ids_toplevel.IDSToplevel.validate"><code class="docutils literal notranslate"><span class="pre">validate</span></code> method</a>).</p>
+<h3 id="using-the-netcdf-backend"><span id="Using-the-netCDF-backend"></span>Using the netCDF backend<a class="headerlink" href="#using-the-netcdf-backend" title="Link to this heading">¶</a></h3>
+<p>A given <code class="docutils literal notranslate"><span class="pre">DBEntry</span></code> instance is associated with a given backend or method for storing the data. Here we are using the netCDF backend which comes as an option for IMAS-Python and does not rely on IMAS-Core. In the example below we are also using the DBEntry as a context manager so we don’t have to care with closing it when we stop operations on it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># let's create a DBEntry for netCDF using context manager </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"DBEntry can be used as a context manager"</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">imas</span><span class="o">.</span><span class="n">DBEntry</span><span class="p">(</span><span class="s2">"./mycoreprofiles.nc"</span><span class="p">,</span><span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">nc</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A DBEntry is also associated with a DD version (here </span><span class="si">{</span><span class="n">nc</span><span class="o">.</span><span class="n">dd_version</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+    <span class="c1"># now let's save our core_profiles IDS into this data entry</span>
+    <span class="n">nc</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+
+<span class="c1"># here the nc DBEntry is not opened anymore, but the netCDF file contains our data</span>
+<span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>./mycoreprofiles.nc
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>DBEntry can be used as a context manager
+A DBEntry is also associated with a DD version (here 4.1.1)
+-rw-r--r-- 1 runner runner 27442 Nov 23 14:30 ./mycoreprofiles.nc
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="use-imas-python-command-line-tool-to-print-ids"><span id="Use-IMAS-Python-command-line-tool-to-print-IDS"></span>Use IMAS-Python command line tool to print IDS<a class="headerlink" href="#use-imas-python-command-line-tool-to-print-ids" title="Link to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="o">!</span>imas<span class="w"> </span>print<span class="w"> </span>--help
+<span class="o">!</span>imas<span class="w"> </span>print<span class="w"> </span>./mycoreprofiles.nc<span class="w"> </span>core_profiles
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>Usage: imas print [OPTIONS] URI IDS [OCCURRENCE]
+
+  Pretty print the contents of an IDS.
+
+  uri         URI of the Data Entry (e.g. "imas:mdsplus?path=testdb").
+  ids         Name of the IDS to print (e.g. "core_profiles").
+  occurrence  Which occurrence to print (defaults to 0).
+
+Options:
+  -a, --all  Also show nodes with empty/default values
+  --help     Show this message and exit.
+<span class=" -Color -Color-Faint -Color-Faint-Cyan">[11/23/26 14:30:45] </span><span class=" -Color -Color-Blue">INFO    </span> Parsing data dictionary version <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.1</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>  <span class="err"></span>]8;id=3390972;file:///opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/imas/dd_zip.py<span class="err"></span>\<span class=" -Color -Color-Faint">dd_zip.py</span><span class="err"></span>]8;;<span class="err"></span>\<span class=" -Color -Color-Faint">:</span><span class="err"></span>]8;id=3390973;file:///opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/imas/dd_zip.py#89<span class="err"></span>\<span class=" -Color -Color-Faint">89</span><span class="err"></span>]8;;<span class="err"></span>\
+<span class=" -Color -Color-Magenta">core_profiles</span>
+├── <span class=" -Color -Color-Magenta">ids_properties</span>
+│   ├── <span class=" -Color -Color-Yellow">homogeneous_time</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+│   └── <span class=" -Color -Color-Magenta">ids_properties/version_put</span>
+│       ├── <span class=" -Color -Color-Yellow">data_dictionary</span>: <span class=" -Color -Color-Green">'4.1.1'</span>
+│       ├── <span class=" -Color -Color-Yellow">access_layer</span>: <span class=" -Color -Color-Green">'N/A'</span>
+│       └── <span class=" -Color -Color-Yellow">access_layer_language</span>: <span class=" -Color -Color-Green">'IMAS-Python 2.3.1'</span>
+├── <span class=" -Color -Color-Magenta">profiles_1d[0]</span>
+│   ├── <span class=" -Color -Color-Magenta">profiles_1d[0]/grid</span>
+│   │   └── <span class=" -Color -Color-Yellow">rho_tor_norm</span>:                                                       
+│   │       <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0204</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0408</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9592</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9796</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>.    <span class=" -Color -Color-Bold">]</span>,        
+│   │       <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                                        
+│   └── <span class=" -Color -Color-Magenta">profiles_1d[0]/electrons</span>
+│       ├── <span class=" -Color -Color-Yellow">temperature</span>:                                                        
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">10000</span>.    ,  <span class=" -Color -Color-Bold -Color-Bold-Cyan">9995.8351</span>,  <span class=" -Color -Color-Bold -Color-Bold-Cyan">9983.3403</span>, <span class=" -Color -Color-Yellow">...</span>,   <span class=" -Color -Color-Bold -Color-Bold-Cyan">799.6668</span>,         
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Cyan">403.9983</span>,     <span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    <span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                 
+│       └── <span class=" -Color -Color-Yellow">density</span>:                                                            
+│           <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0000e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.9983e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.9933e+19</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.3199e+19</span>,         
+│           <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1616e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.0000e+19</span><span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                               
+└── <span class=" -Color -Color-Yellow">time</span>: <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.<span class=" -Color -Color-Bold">])</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="the-put-slice-method"><span id="The-put_slice-method"></span>The <code class="docutils literal notranslate"><span class="pre">put_slice</span></code> method<a class="headerlink" href="#the-put-slice-method" title="Link to this heading">¶</a></h2>
+<p>One may want to store new time slices of IDS data progressively in the file, for instance while running a long time-evolving simulation.
+While this is not supported by the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/netcdf.html#implemented-features-of-a-netcdf-dbentry">netCDF DBEntry</a>, some of IMAS-Core backends support this capability via the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.put_slice"><code class="docutils literal notranslate"><span class="pre">put_slice</span></code> method</a>.</p>
+<div class="alert alert-block alert-info">
+<b>Info:</b> The `put_slice` method will append one or several time slices after any existing ones on disk, it will store only time-dependent data (unless if the IDS is empty on disk, in such case it will also store the time-independent data during the first call). Time ordering is the responsibility of the user and shall monotonically increase.</div>
+<h3 id="using-an-imas-core-backend-e-g-hdf5"><span id="Using-an-IMAS-Core-backend-(e.g.-HDF5)"></span>Using an IMAS-Core backend (e.g. HDF5)<a class="headerlink" href="#using-an-imas-core-backend-e-g-hdf5" title="Link to this heading">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># let's create a DBentry for HDF5</span>
+<span class="n">dentry</span> <span class="o">=</span> <span class="n">imas</span><span class="o">.</span><span class="n">DBEntry</span><span class="p">(</span><span class="s2">"imas:hdf5?path=./mytestpulse"</span><span class="p">,</span><span class="s2">"w"</span><span class="p">)</span>
+<span class="c1"># this dentry can be used for I/O operations until its we call its close() method</span>
+<span class="n">inspect</span><span class="p">(</span><span class="n">dentry</span><span class="p">)</span>
+
+<span class="c1"># first we put the same initial data slice at time=0.0</span>
+<span class="n">dentry</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+
+<span class="c1"># then we define a few extra time points</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+<span class="c1"># we resize without "keeping" existing profiles_1d data in the IDS object </span>
+<span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">electrons</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="mi">10000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">cp</span><span class="p">[</span><span class="sa">f</span><span class="s2">"profiles_1d[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">]/electrons/density"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="mf">5e19</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">rho_tor_norm</span> <span class="o">=</span> <span class="n">rho</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+
+<span class="c1"># we can append extra slices into the existing dentry with the put_slice method</span>
+<span class="n">dentry</span><span class="o">.</span><span class="n">put_slice</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+<span class="c1"># now we can close this dentry </span>
+<span class="n">dentry</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="o">!</span>imas<span class="w"> </span>print<span class="w"> </span>imas:hdf5?path<span class="o">=</span>./mytestpulse<span class="w"> </span>core_profiles
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #000080; text-decoration-color: #000080">╭──────────────────── </span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">class</span><span style="color: #000000; text-decoration-color: #000000"> </span><span style="color: #008000; text-decoration-color: #008000">'imas.db_entry.DBEntry'</span><span style="color: #000080; text-decoration-color: #000080; font-weight: bold">&gt;</span><span style="color: #000080; text-decoration-color: #000080"> ─────────────────────╮</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008080; text-decoration-color: #008080">Represents an IMAS database entry, which is a collection of stored IDSs.</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╭──────────────────────────────────────────────────────────────────────╮</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">imas.db_entry.DBEntry</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7676ccd5e420</span><span style="font-weight: bold">&gt;</span>                     <span style="color: #008000; text-decoration-color: #008000">│</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #008000; text-decoration-color: #008000">╰──────────────────────────────────────────────────────────────────────╯</span> <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>                                                                          <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span> <span style="color: #808000; text-decoration-color: #808000; font-style: italic">dd_version</span> = <span style="color: #008000; text-decoration-color: #008000">'4.1.1'</span>                                                     <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>    <span style="color: #808000; text-decoration-color: #808000; font-style: italic">factory</span> = <span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">imas.ids_factory.IDSFactory</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7676ccebf020</span><span style="font-weight: bold">&gt;</span>      <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>       <span style="color: #808000; text-decoration-color: #808000; font-style: italic">mode</span> = <span style="color: #008000; text-decoration-color: #008000">'w'</span>                                                         <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">│</span>        <span style="color: #808000; text-decoration-color: #808000; font-style: italic">uri</span> = <span style="color: #008000; text-decoration-color: #008000">'imas:hdf5?path=./mytestpulse'</span>                              <span style="color: #000080; text-decoration-color: #000080">│</span>
+<span style="color: #000080; text-decoration-color: #000080">╰──────────────────────────────────────────────────────────────────────────╯</span>
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code><span class=" -Color -Color-Faint -Color-Faint-Cyan">[11/23/26 14:30:47] </span><span class=" -Color -Color-Blue">INFO    </span> Parsing data dictionary version <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.1</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>  <span class="err"></span>]8;id=16482210;file:///opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/imas/dd_zip.py<span class="err"></span>\<span class=" -Color -Color-Faint">dd_zip.py</span><span class="err"></span>]8;;<span class="err"></span>\<span class=" -Color -Color-Faint">:</span><span class="err"></span>]8;id=16482211;file:///opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/imas/dd_zip.py#89<span class="err"></span>\<span class=" -Color -Color-Faint">89</span><span class="err"></span>]8;;<span class="err"></span>\
+<span class=" -Color -Color-Magenta">core_profiles</span>
+├── <span class=" -Color -Color-Magenta">ids_properties</span>
+│   ├── <span class=" -Color -Color-Yellow">homogeneous_time</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+│   └── <span class=" -Color -Color-Magenta">ids_properties/version_put</span>
+│       ├── <span class=" -Color -Color-Yellow">data_dictionary</span>: <span class=" -Color -Color-Green">'4.1.1'</span>
+│       ├── <span class=" -Color -Color-Yellow">access_layer</span>: <span class=" -Color -Color-Green">'5.7.3'</span>
+│       └── <span class=" -Color -Color-Yellow">access_layer_language</span>: <span class=" -Color -Color-Green">'IMAS-Python 2.3.1'</span>
+├── <span class=" -Color -Color-Magenta">profiles_1d[0]</span>
+│   ├── <span class=" -Color -Color-Magenta">profiles_1d[0]/grid</span>
+│   │   └── <span class=" -Color -Color-Yellow">rho_tor_norm</span>:                                                       
+│   │       <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0204</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0408</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9592</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9796</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>.    <span class=" -Color -Color-Bold">]</span>,        
+│   │       <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                                        
+│   └── <span class=" -Color -Color-Magenta">profiles_1d[0]/electrons</span>
+│       ├── <span class=" -Color -Color-Yellow">temperature</span>:                                                        
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">10000</span>.    ,  <span class=" -Color -Color-Bold -Color-Bold-Cyan">9995.8351</span>,  <span class=" -Color -Color-Bold -Color-Bold-Cyan">9983.3403</span>, <span class=" -Color -Color-Yellow">...</span>,   <span class=" -Color -Color-Bold -Color-Bold-Cyan">799.6668</span>,         
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Cyan">403.9983</span>,     <span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    <span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                 
+│       └── <span class=" -Color -Color-Yellow">density</span>:                                                            
+│           <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0000e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.9983e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">4.9933e+19</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.3199e+19</span>,         
+│           <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1616e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.0000e+19</span><span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                               
+├── <span class=" -Color -Color-Magenta">profiles_1d[1]</span>
+│   ├── <span class=" -Color -Color-Magenta">profiles_1d[1]/grid</span>
+│   │   └── <span class=" -Color -Color-Yellow">rho_tor_norm</span>:                                                       
+│   │       <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0204</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0408</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9592</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9796</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>.    <span class=" -Color -Color-Bold">]</span>,        
+│   │       <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                                        
+│   └── <span class=" -Color -Color-Magenta">profiles_1d[1]/electrons</span>
+│       ├── <span class=" -Color -Color-Yellow">temperature</span>:                                                        
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">10200</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">10195.7518</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">10183.0071</span>, <span class=" -Color -Color-Yellow">...</span>,   <span class=" -Color -Color-Bold -Color-Bold-Cyan">815.6601</span>,         
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Cyan">412.0783</span>,     <span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    <span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                 
+│       └── <span class=" -Color -Color-Yellow">density</span>:                                                            
+│           <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0500e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0483e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0433e+19</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.3331e+19</span>,         
+│           <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1732e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.0100e+19</span><span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                               
+├── <span class=" -Color -Color-Magenta">profiles_1d[2]</span>
+│   ├── <span class=" -Color -Color-Magenta">profiles_1d[2]/grid</span>
+│   │   └── <span class=" -Color -Color-Yellow">rho_tor_norm</span>:                                                       
+│   │       <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0204</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0408</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9592</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9796</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>.    <span class=" -Color -Color-Bold">]</span>,        
+│   │       <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                                        
+│   └── <span class=" -Color -Color-Magenta">profiles_1d[2]/electrons</span>
+│       ├── <span class=" -Color -Color-Yellow">temperature</span>:                                                        
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">10400</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">10395.6685</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">10382.6739</span>, <span class=" -Color -Color-Yellow">...</span>,   <span class=" -Color -Color-Bold -Color-Bold-Cyan">831.6535</span>,         
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Cyan">420.1583</span>,     <span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    <span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                 
+│       └── <span class=" -Color -Color-Yellow">density</span>:                                                            
+│           <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">5.1000e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0983e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.0932e+19</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.3463e+19</span>,         
+│           <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1848e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.0200e+19</span><span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                               
+├── <span class=" -Color -Color-Magenta">profiles_1d[3]</span>
+│   ├── <span class=" -Color -Color-Magenta">profiles_1d[3]/grid</span>
+│   │   └── <span class=" -Color -Color-Yellow">rho_tor_norm</span>:                                                       
+│   │       <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0204</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.0408</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9592</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.9796</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>.    <span class=" -Color -Color-Bold">]</span>,        
+│   │       <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                                        
+│   └── <span class=" -Color -Color-Magenta">profiles_1d[3]/electrons</span>
+│       ├── <span class=" -Color -Color-Yellow">temperature</span>:                                                        
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">10600</span>.    , <span class=" -Color -Color-Bold -Color-Bold-Cyan">10595.5852</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">10582.3407</span>, <span class=" -Color -Color-Yellow">...</span>,   <span class=" -Color -Color-Bold -Color-Bold-Cyan">847.6468</span>,         
+│       │   <span class=" -Color -Color-Bold -Color-Bold-Cyan">428.2382</span>,     <span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>.    <span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                                 
+│       └── <span class=" -Color -Color-Yellow">density</span>:                                                            
+│           <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">5.1500e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.1483e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">5.1431e+19</span>, <span class=" -Color -Color-Yellow">...</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.3595e+19</span>,         
+│           <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.1964e+19</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">1.0300e+19</span><span class=" -Color -Color-Bold">]</span>, <span class=" -Color -Color-Yellow">shape</span>=<span class=" -Color -Color-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">50</span>,<span class=" -Color -Color-Bold">))</span>                               
+└── <span class=" -Color -Color-Yellow">time</span>: <span class=" -Color -Color-Bold -Color-Bold-Magenta">array</span><span class=" -Color -Color-Bold">([</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">0</span>. , <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.1</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.2</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan">0.3</span><span class=" -Color -Color-Bold">])</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="loading-idss"><span id="Loading-IDSs"></span>Loading IDSs<a class="headerlink" href="#loading-idss" title="Link to this heading">¶</a></h2>
+<p>Loading an IDS (or a part of it) from a given data entry also starts by instantiating a <code class="docutils literal notranslate"><span class="pre">DBEntry</span></code> object for the corresponding backend, but remind that the <code class="docutils literal notranslate"><span class="pre">w</span></code> mode we used previously is for creating a new data entry so it will overwrite any existing one, here instead we are going to use <code class="docutils literal notranslate"><span class="pre">r</span></code> (check <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.__init__.mode"><code class="docutils literal notranslate"> <span class="pre">mode</span></code></a> for more options).</p>
+<h3 id="the-get-method-and-lazy-access"><span id="The-get-method-and-lazy-access"></span>The <code class="docutils literal notranslate"><span class="pre">get</span></code> method and lazy access<a class="headerlink" href="#the-get-method-and-lazy-access" title="Link to this heading">¶</a></h3>
+<p>To read the entire IDS data, including all time points, you can use the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get"><code class="docutils literal notranslate"><span class="pre">get</span></code> method</a>.  In case you may not be interested in the entire structure, you may use the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get.lazy"><code class="docutils literal notranslate"><span class="pre">lazy</span></code></a> loading option.</p>
+<div class="alert alert-block alert-info">
+<b>Info:</b> Note that the version of the DD may differ between the current default version (or your chosen one via the <code>IMAS_VERSION</code> environment variable or via the <a href=https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.__init__.dd_version><code>dd_version</code></a> argument of the <code>DBEntry</code>) and the version of the IDSs in the data entry on file. The <code>get</code> method will try to convert automatically the IDS to the targeted DD version, but you may want to keep the source DD version by passing the extra argument <a href=https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get.autoconvert><code>autoconvert=False</code></a>.</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># let's open our previous data entry for reading</span>
+<span class="k">with</span> <span class="n">imas</span><span class="o">.</span><span class="n">DBEntry</span><span class="p">(</span><span class="s2">"imas:hdf5?path=./mytestpulse"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">din</span><span class="p">:</span>
+    <span class="c1"># reading the IDS in lazy loading mode returns instantaneously </span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">din</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"core_profiles"</span><span class="p">,</span><span class="n">lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># data will be read only when being accessed in the IDS object</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"time = </span><span class="si">{</span><span class="n">cp</span><span class="o">.</span><span class="n">time</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"T_e for one to last time = </span><span class="si">{</span><span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">electrons</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"T_e for last time = </span><span class="si">{</span><span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">electrons</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>time = &lt;IDSNumericArray (IDS:core_profiles, time, FLT_1D)&gt;
+numpy.ndarray([0. , 0.1, 0.2, 0.3])
+T_e for one to last time = &lt;IDSNumericArray (IDS:core_profiles, profiles_1d[2]/electrons/temperature, FLT_1D)&gt;
+numpy.ndarray([10400.        , 10395.66847147, 10382.67388588, 10361.01624323,
+       10330.69554352, 10291.71178676, 10244.06497293, 10187.75510204,
+       10122.78217409, 10049.14618909,  9966.84714702,  9875.8850479 ,
+        9776.25989171,  9667.97167847,  9551.02040816,  9425.4060808 ,
+        9291.12869638,  9148.18825489,  8996.58475635,  8836.31820075,
+        8667.38858809,  8489.79591837,  8303.54019159,  8108.62140775,
+        7905.03956685,  7692.79466889,  7471.88671387,  7242.31570179,
+        7004.08163265,  6757.18450646,  6501.6243232 ,  6237.40108288,
+        5964.51478551,  5682.96543107,  5392.75301958,  5093.87755102,
+        4786.33902541,  4470.13744273,  4145.272803  ,  3811.74510621,
+        3469.55435235,  3118.70054144,  2759.18367347,  2391.00374844,
+        2014.16076635,  1628.6547272 ,  1234.48563099,   831.65347772,
+         420.15826739,     0.        ])
+T_e for last time = &lt;IDSNumericArray (IDS:core_profiles, profiles_1d[3]/electrons/temperature, FLT_1D)&gt;
+numpy.ndarray([10600.        , 10595.58517284, 10582.34069138, 10560.2665556 ,
+       10529.36276551, 10489.62932112, 10441.06622241, 10383.67346939,
+       10317.45106206, 10242.39900042, 10158.51728446, 10065.8059142 ,
+        9964.26488963,  9853.89421075,  9734.69387755,  9606.66389005,
+        9469.80424823,  9324.1149521 ,  9169.59600167,  9006.24739692,
+        8834.06913786,  8653.06122449,  8463.22365681,  8264.55643482,
+        8057.05955852,  7840.73302791,  7615.57684298,  7381.59100375,
+        7138.7755102 ,  6887.13036235,  6626.65556018,  6357.35110371,
+        6079.21699292,  5792.25322782,  5496.45980841,  5191.83673469,
+        4878.38400666,  4556.10162432,  4224.98958767,  3885.04789671,
+        3536.27655144,  3178.67555185,  2812.24489796,  2436.98458975,
+        2052.89462724,  1659.97501041,  1258.22573928,   847.64681383,
+         428.23823407,     0.        ])
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="extracting-a-single-time-slice-with-the-get-slice-method"><span id="Extracting-a-single-time-slice-with-the-get_slice-method"></span>Extracting a single time slice with the <code class="docutils literal notranslate"><span class="pre">get_slice</span></code> method<a class="headerlink" href="#extracting-a-single-time-slice-with-the-get-slice-method" title="Link to this heading">¶</a></h3>
+<p>We may be interested in a single point in time (which may or not exists in the data entry), so instead of reading the entire data as previously we can use the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get_slice"><code class="docutils literal notranslate"><span class="pre">get_slice</span></code> method</a> instead. This method requires two mandatory arguments: the requested time value and the <a class="reference external" href="https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get_slice.interpolation_method"><code class="docutils literal notranslate"><span class="pre">interpolation_method</span></code></a> to be applied if the time value is not present in this IDS.</p>
+<div class="alert alert-block alert-info">
+<b>Info:</b> If you are interested in several time points, or time samples at a given frequency you can use the <a href=https://imas-python.readthedocs.io/en/stable/generated/imas.db_entry.DBEntry.html#imas.db_entry.DBEntry.get_sample><code>get_sample</code> method</a>. Both   <code>get_slice</code> and <code>get_sample</code> are only available with IMAS-Core, not with netCDF.</div> 
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># useful constant parameters are available in imas.ids_defs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">imas.ids_defs</span><span class="w"> </span><span class="kn">import</span> <span class="n">LINEAR_INTERP</span>
+
+<span class="c1"># let's open our previous time-dependent data entry</span>
+<span class="k">with</span> <span class="n">imas</span><span class="o">.</span><span class="n">DBEntry</span><span class="p">(</span><span class="s2">"imas:hdf5?path=./mytestpulse"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">din</span><span class="p">:</span>
+    <span class="c1"># read a single slice, interpolate linearly the values at the requested time </span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">din</span><span class="o">.</span><span class="n">get_slice</span><span class="p">(</span><span class="s2">"core_profiles"</span><span class="p">,</span>
+                       <span class="n">time_requested</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+                       <span class="n">interpolation_method</span><span class="o">=</span><span class="n">LINEAR_INTERP</span><span class="p">)</span>
+    <span class="c1"># data is calculated by interpolating linearly between the two adjacent times</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"T_e for time = </span><span class="si">{</span><span class="n">cp</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">cp</span><span class="o">.</span><span class="n">profiles_1d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">electrons</span><span class="o">.</span><span class="n">temperature</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><code>T_e for time = 0.25: &lt;IDSNumericArray (IDS:core_profiles, profiles_1d[0]/electrons/temperature, FLT_1D)&gt;
+numpy.ndarray([10500.        , 10495.62682216, 10482.50728863, 10460.64139942,
+       10430.02915452, 10390.67055394, 10342.56559767, 10285.71428571,
+       10220.11661808, 10145.77259475, 10062.68221574,  9970.84548105,
+        9870.26239067,  9760.93294461,  9642.85714286,  9516.03498542,
+        9380.4664723 ,  9236.1516035 ,  9083.09037901,  8921.28279883,
+        8750.72886297,  8571.42857143,  8383.3819242 ,  8186.58892128,
+        7981.04956268,  7766.7638484 ,  7543.73177843,  7311.95335277,
+        7071.42857143,  6822.1574344 ,  6564.13994169,  6297.37609329,
+        6021.86588921,  5737.60932945,  5444.60641399,  5142.85714286,
+        4832.36151603,  4513.11953353,  4185.13119534,  3848.39650146,
+        3502.9154519 ,  3148.68804665,  2785.71428571,  2413.9941691 ,
+        2033.52769679,  1644.3148688 ,  1246.35568513,   839.65014577,
+         424.19825073,     0.        ])
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="additional-resources"><span id="Additional-Resources"></span>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/iterorganization/IMAS-Python">IMAS-Python Repository</a></p></li>
+<li><p><a class="reference external" href="https://imas-python.readthedocs.io/en/stable/">IMAS-Python Documentation</a></p></li>
+<li><p><a class="reference external" href="https://imas-python.readthedocs.io/en/stable/courses/basic_user_training.html">IMAS-Python Training Examples</a></p></li>
+</ul>
+<hr class="docutils" />
+<p><a class="reference internal" href="03_IMAS_Core.html"><span class="std std-doc"><b>←</b>IMAS-Core</span></a>     <a class="reference internal" href="00_Start_Here.html"><span class="std std-doc"><b>↑</b>Tutorial TOC</span></a>     <a class="reference internal" href="04_IDStools.html"><span class="std std-doc">IDStools<b>→</b></span></a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright ITER Organization.
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    9.1.1.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+        <script src="../../_static/sphinx_immaterial_theme.ce3f826234c1e494c.min.js?v=6917d573"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    
+  </body>
+</html>
